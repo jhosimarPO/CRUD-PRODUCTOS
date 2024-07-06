@@ -1,0 +1,96 @@
+import { Product } from './models/productModel'
+import { User } from './models/userModel'
+import bcrypt from 'bcryptjs'
+
+export const sampleProducts: Product[] = [
+	{
+		name: 'Camisa Slim Nike',
+		slug: 'camisa-slim-nike',
+		category: 'Camisas',
+		image: '../images/p1.jpg',
+		description: 'producto de alta calidad',
+		brand: 'Nike',
+		price: 120,
+		countInStock: 10,
+		rating: 4,
+		numReviews: 10,
+		reviews: [
+			{
+				name: 'John',
+				comment: 'bueno',
+				rating: 4,
+				createdAt: new Date(),
+			},
+		],
+		images: ['../images/p11.jpg'],
+		isFeatured: true,
+		banner: '../images/b1.jpg',
+	},
+	{
+		name: 'Camisa Ajustada Adidas',
+		slug: 'camisa-ajustada-adidas',
+		category: 'Camisas',
+		image: '../images/p2.jpg',
+		price: 100,
+		countInStock: 20,
+		brand: 'Adidas',
+		rating: 4.0,
+		numReviews: 10,
+		description: 'producto de alta calidad',
+		reviews: [],
+		images: [],
+		isFeatured: true,
+		banner: '../images/b2.jpg',
+	},
+	{
+		name: 'Pantalones Libres Lacoste',
+		slug: 'pantalones-libres-lacoste',
+		category: 'Pantalones',
+		image: '../images/p3.jpg',
+		price: 220,
+		countInStock: 0,
+		brand: 'Lacoste',
+		rating: 4.8,
+		numReviews: 17,
+		description: 'producto de alta calidad',
+		reviews: [],
+		images: [],
+		isFeatured: false,
+	},
+	{
+		name: 'Pantalón Slim Nike',
+		slug: 'pantalon-slim-nike',
+		category: 'Pantalones',
+		image: '../images/p4.jpg',
+		price: 78,
+		countInStock: 15,
+		brand: 'Nike',
+		rating: 4.5,
+		numReviews: 14,
+		description: 'producto de alta calidad',
+		reviews: [],
+		images: [],
+		isFeatured: false,
+	},
+]
+
+export const sampleUsers: User[] = [
+	{
+		name: 'Joe',
+		email: 'admin@example.com',
+		password: bcrypt.hashSync('123456'),
+		isAdmin: true,
+	},
+    {
+		name: 'David',
+		email: 'david@example.com',
+		password: bcrypt.hashSync('123456'),
+		isAdmin: true,
+	},
+	{
+		name: 'John',
+		email: 'user@example.com',
+		password: bcrypt.hashSync('123456'),
+		isAdmin: false,
+	},
+]
